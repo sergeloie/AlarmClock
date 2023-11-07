@@ -4,11 +4,28 @@
 package io.hexlet;
 
 public class AlarmClock {
-    public String getGreeting() {
-        return "Hello World!";
+
+    private int hours;
+    private int minutes;
+
+    private int alarmHours;
+    private int alarmMinutes;
+
+    public AlarmClock() {
+        this.hours = 12;
+        this.minutes = 0;
+        this.alarmHours = 6;
+        this.alarmMinutes = 0;
     }
 
-    public static void main(String[] args) {
-        System.out.println(new AlarmClock().getGreeting());
+    public void tick() {
+        minutes++;
+        if (minutes == 60) {
+            hours++;
+            minutes = 0;
+        }
+        if (hours == 24) {
+            hours =0;
+        }
     }
 }
