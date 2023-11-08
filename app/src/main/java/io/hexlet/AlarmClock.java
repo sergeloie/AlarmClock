@@ -3,7 +3,12 @@
  */
 package io.hexlet;
 
+import io.hexlet.states.ClockState;
+import io.hexlet.states.State;
+
 public class AlarmClock {
+
+    private State state;
 
     private int hours;
     private int minutes;
@@ -12,6 +17,7 @@ public class AlarmClock {
     private int alarmMinutes;
 
     public AlarmClock() {
+        this.state = new ClockState();
         this.hours = 12;
         this.minutes = 0;
         this.alarmHours = 6;
@@ -28,4 +34,69 @@ public class AlarmClock {
             hours =0;
         }
     }
+
+    public int getMinutes() {
+        return this.minutes;
+    }
+
+    public int getHours() {
+        return this.hours;
+    }
+
+    public int getAlarmMinutes() {
+        return this.alarmMinutes;
+    }
+
+    public int getAlarmHours() {
+        return this.alarmHours;
+    }
+
+    public String getCurrentMode() {
+        return this.state.stateName;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    public void switchDisplayMode(State state) {
+        state.switchDisplayMode(this);
+    }
+
+    public void switchAlarmMode() {
+        state.switchAlarmMode(this);
+    }
+
+    public void turnOffAlarmSound() {
+        state.turnOffAlarmSound(this);
+    }
+
+    public void incrementHour() {
+        state.incrementHour(this);
+    }
+
+    public void incrementMinute() {
+        state.incrementMinute(this);
+    }
+
+
 }
