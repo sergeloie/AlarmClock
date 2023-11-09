@@ -1,4 +1,31 @@
 package io.hexlet.states;
 
-public class BellState {
+import io.hexlet.AlarmClock;
+
+public class BellState implements State{
+    @Override
+    public void switchState(AlarmClock clock) {
+
+    }
+
+    @Override
+    public void incrementHour(AlarmClock clock) {
+
+    }
+
+    @Override
+    public void incrementMinute(AlarmClock clock) {
+
+    }
+
+    @Override
+    public String getStateName() {
+        return null;
+    }
+
+    @Override
+    public void clickMode(AlarmClock clock) {
+        System.out.println("set state to Clock");
+        clock.setState(new ClockState());
+    }
 }

@@ -6,13 +6,14 @@ public interface State {
 
     String stateName = null;
 
-    void switchDisplayMode(AlarmClock clock);
-    void switchAlarmMode(AlarmClock clock);
-    void turnOffAlarmSound(AlarmClock clock);
+    void switchState(AlarmClock clock);
+
     void incrementHour(AlarmClock clock);
     void incrementMinute(AlarmClock clock);
 
     String getStateName();
+
+    void clickMode(AlarmClock clock);
 
 
 }

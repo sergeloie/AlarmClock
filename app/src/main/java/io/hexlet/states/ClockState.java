@@ -7,17 +7,7 @@ public class ClockState implements State{
     public String stateName = "clock";
 
     @Override
-    public void switchDisplayMode(AlarmClock clock) {
-        clock.switchDisplayMode();
-    }
-
-    @Override
-    public void switchAlarmMode(AlarmClock clock) {
-
-    }
-
-    @Override
-    public void turnOffAlarmSound(AlarmClock clock) {
+    public void switchState(AlarmClock clock) {
 
     }
 
@@ -33,6 +23,12 @@ public class ClockState implements State{
 
     @Override
     public String getStateName() {
-        return this.stateName;
+        return stateName;
+    }
+
+    @Override
+    public void clickMode(AlarmClock clock) {
+        System.out.println("set state to Alarm");
+        clock.setState(new AlarmState());
     }
 }

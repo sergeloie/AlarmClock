@@ -16,6 +16,9 @@ public class AlarmClock {
     private int alarmHours;
     private int alarmMinutes;
 
+    private boolean alarmOn;
+
+
     public AlarmClock() {
         this.state = new ClockState();
         this.hours = 12;
@@ -35,6 +38,13 @@ public class AlarmClock {
         }
     }
 
+    public boolean isAlarmOn() {
+        return alarmOn;
+    }
+
+    public boolean isAlarmTime() {
+        return minutes == alarmMinutes && hours == alarmHours;
+    }
     public int getMinutes() {
         return this.minutes;
     }
@@ -52,7 +62,17 @@ public class AlarmClock {
     }
 
     public String getCurrentMode() {
-        return this.state.stateName;
+        return this.state.getStateName();
+    }
+
+
+
+    public void clickMode() {
+        state.clickMode(this);
+    }
+
+    public void setState(State state) {
+        this.state = state;
     }
 
 
@@ -77,26 +97,6 @@ public class AlarmClock {
 
 
 
-
-    public void switchDisplayMode(State state) {
-        state.switchDisplayMode(this);
-    }
-
-    public void switchAlarmMode() {
-        state.switchAlarmMode(this);
-    }
-
-    public void turnOffAlarmSound() {
-        state.turnOffAlarmSound(this);
-    }
-
-    public void incrementHour() {
-        state.incrementHour(this);
-    }
-
-    public void incrementMinute() {
-        state.incrementMinute(this);
-    }
 
 
 }
