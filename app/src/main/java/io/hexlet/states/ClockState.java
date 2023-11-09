@@ -2,33 +2,15 @@ package io.hexlet.states;
 
 import io.hexlet.AlarmClock;
 
-public class ClockState implements State{
-
-    public String stateName = "clock";
-
-    @Override
-    public void switchState(AlarmClock clock) {
-
-    }
-
-    @Override
-    public void incrementHour(AlarmClock clock) {
-
-    }
-
-    @Override
-    public void incrementMinute(AlarmClock clock) {
-
-    }
+public final class ClockState implements State {
 
     @Override
     public String getStateName() {
-        return stateName;
+        return "clock";
     }
 
     @Override
     public void clickMode(AlarmClock clock) {
-        System.out.println("set state to Alarm");
         clock.setState(new AlarmState());
     }
 
@@ -39,6 +21,6 @@ public class ClockState implements State{
 
     @Override
     public void clickM(AlarmClock clock) {
-        clock.incrementHours();
+        clock.incrementMinutes();
     }
 }

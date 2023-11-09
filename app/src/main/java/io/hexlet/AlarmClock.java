@@ -7,7 +7,7 @@ import io.hexlet.states.BellState;
 import io.hexlet.states.ClockState;
 import io.hexlet.states.State;
 
-public class AlarmClock {
+public final class AlarmClock {
 
     private State state;
 
@@ -68,8 +68,6 @@ public class AlarmClock {
         return this.state.getStateName();
     }
 
-
-
     public void clickMode() {
         state.clickMode(this);
     }
@@ -84,6 +82,10 @@ public class AlarmClock {
 
     public void clickH() {
         this.state.clickH(this);
+    }
+
+    public void clickM() {
+        this.state.clickM(this);
     }
 
 
@@ -102,29 +104,4 @@ public class AlarmClock {
     public void incrementAlarmMinutes() {
         alarmMinutes = ++alarmMinutes == 60 ? 0 : alarmMinutes;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
