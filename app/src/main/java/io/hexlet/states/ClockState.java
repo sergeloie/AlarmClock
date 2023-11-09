@@ -31,4 +31,14 @@ public class ClockState implements State{
         System.out.println("set state to Alarm");
         clock.setState(new AlarmState());
     }
+
+    @Override
+    public void clickH(AlarmClock clock) {
+        clock.incrementHours();
+    }
+
+    @Override
+    public void clickM(AlarmClock clock) {
+        clock.incrementHours();
+    }
 }

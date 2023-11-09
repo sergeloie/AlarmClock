@@ -3,6 +3,7 @@
  */
 package io.hexlet;
 
+import io.hexlet.states.BellState;
 import io.hexlet.states.ClockState;
 import io.hexlet.states.State;
 
@@ -28,13 +29,15 @@ public class AlarmClock {
     }
 
     public void tick() {
-        minutes++;
-        if (minutes == 60) {
-            hours++;
-            minutes = 0;
+        incrementMinutes();
+        if (minutes == 0) {
+            incrementHours();
         }
-        if (hours == 24) {
-            hours =0;
+        if (state instanceof BellState) {
+            this.setState(new ClockState());
+        }
+        if (isAlarmOn() && isAlarmTime()) {
+            this.setState(new BellState());
         }
     }
 
@@ -73,6 +76,31 @@ public class AlarmClock {
 
     public void setState(State state) {
         this.state = state;
+    }
+
+    public void longClickMode() {
+        alarmOn = !alarmOn;
+    }
+
+    public void clickH() {
+        this.state.clickH(this);
+    }
+
+
+    public void incrementHours() {
+        hours = ++hours == 24 ? 0 : hours;
+    }
+
+    public void incrementMinutes() {
+        minutes = ++minutes == 60 ? 0 : minutes;
+    }
+
+    public void incrementAlarmHours() {
+        alarmHours = ++alarmHours == 24 ? 0 : alarmHours;
+    }
+
+    public void incrementAlarmMinutes() {
+        alarmMinutes = ++alarmMinutes == 60 ? 0 : alarmMinutes;
     }
 
 

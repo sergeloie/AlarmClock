@@ -3,6 +3,9 @@ package io.hexlet.states;
 import io.hexlet.AlarmClock;
 
 public class BellState implements State{
+
+    String stateName = "bell";
+
     @Override
     public void switchState(AlarmClock clock) {
 
@@ -20,7 +23,7 @@ public class BellState implements State{
 
     @Override
     public String getStateName() {
-        return null;
+        return this.stateName;
     }
 
     @Override
@@ -28,4 +31,10 @@ public class BellState implements State{
         System.out.println("set state to Clock");
         clock.setState(new ClockState());
     }
+
+    @Override
+    public void clickH(AlarmClock clock) {}
+
+    @Override
+    public void clickM(AlarmClock clock) {}
 }

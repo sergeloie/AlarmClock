@@ -15,5 +15,8 @@ public interface State {
 
     void clickMode(AlarmClock clock);
 
+    void clickH(AlarmClock clock);
+    void clickM(AlarmClock clock);
+
 
 }
