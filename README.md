@@ -39,19 +39,3 @@ https://ru.hexlet.io/challenges/java_oop_clock_exercise/instance
 *   `getAlarmMinutes()` - возвращает минуты, установленные на будильнике
 *   `getAlarmHours()` - возвращает часы, установленные на будильнике
 *   `getCurrentMode()` - возвращает текущий режим (Строка "alarm" или "clock" или "bell")
-
-Основной спецификацией к данной задачe нужно считать тесты.
-
-src/main/java/io/hexlet/AlarmClock.java
----------------------------------------
-
-Реализуйте интерфейсные методы и логику работы часов
-
-src/main/java/io/hexlet/states/State.java, BellState.java, ClockState.java, AlarmState.java
--------------------------------------------------------------------------------------------
-
-Реализуйте интерфейс `State` и логику состояний
-
-### Подсказки
-
-*   Паттерн "Состояние"(https://ru.wikipedia.org/wiki/%D0%A1%D0%BE%D1%81%D1%82%D0%BE%D1%8F%D0%BD%D0%B8%D0%B5_(%D1%88%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F))
